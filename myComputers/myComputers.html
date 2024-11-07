@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My computers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/style.css" />
+  <script defer src="/myComputers/myComputers.js"></script>
+</head>
+
+<body  data-bs-theme="dark" >
+  <header class="border-top border-bottom py-3 m-3">
+    <nav>
+      <button class="btn btn-warning">
+        <a href="/index.html">Main page</a>
+      </button>
+      <button class="btn btn-primary addNewCompBtn" data-bs-toggle="modal" data-bs-target="#computerModal">
+        New computer
+      </button>
+    </nav>
+  </header>
+  <main class="m-3">
+    <section>
+      <!-- <div class="row f=d-flex justify-content-end">
+        <div class="col-2">
+          <input width="200px" type="search" class="col-1 form-control searchInput" placeholder="search">
+        </div>
+      </div> -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">name</th>
+            <th scope="col">image</th>
+            <th scope="col">price</th>
+            <th scope="col">operations</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          <!-- <tr>
+            <td>1</td>
+            <td>Lenovo</td>
+            <td>
+              <img width="70"
+                src="https://p3-ofp.static.pub/fes/cms/2023/04/03/yofiwjxag9102x15eo5mzd2f6icmew758030.png" alt="" />
+            </td>
+            <td>1500 $</td>
+            <td>
+              <button class="btn btn-primary">edit</button>
+              <button class="btn btn-danger">delete</button>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img width="100%" class="imageInModal" src="" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="computerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-2 computerFormTitle" id="exampleModalLabel">
+            New Computer
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="row g-3 needs-validation form" novalidate>
+            <div class="row">
+              <div class="col">
+                <div class="">
+                  <label for="validationCustom03" class="form-label">Category</label>
+                  <input type="text" class="form-control categotyInput" id="validationCustom03" required />
+                  <div class="invalid-feedback">
+                    Please provide a valid category.
+                  </div>
+                </div>
+
+                <div class="">
+                  <label for="validationCustom03" class="form-label">Name</label>
+                  <input type="text" class="form-control nameInput" id="validationCustom03" required />
+                  <div class="invalid-feedback">
+                    Please provide a valid name.
+                  </div>
+                </div>
+                <div class="">
+                  <label for="validationCustom03" class="form-label">Description</label>
+                  <input type="text" class="form-control descriptionInput" id="validationCustom03" required />
+                  <div class="invalid-feedback">
+                    Please provide a valid description.
+                  </div>
+                </div>
+                <div class="">
+                  <label for="validationCustom03" class="form-label">Price</label>
+                  <input type="number" class="form-control priceInput" id="validationCustom03" required />
+                  <div class="invalid-feedback">
+                    Please provide a valid price.
+                  </div>
+                </div>
+
+                <div class="">
+                  <label for="validationDefault04" class="form-label">new</label>
+                  <select class="form-select newSelect" id="validationDefault04" required>
+                    <option selected disabled value="">Choose...</option>
+                    <option value="yes">yes</option>
+                    <option value="no">no</option>
+                  </select>
+                </div>
+
+                <div class="">
+                  <label for="validationCustom03" class="form-label">Image</label>
+                  <input type="url" class="form-control imageInput" id="validationCustom03" required />
+                  <div class="invalid-feedback">
+                    Please provide a valid image.
+                  </div>
+                  <img width="170" class="imageInForm my-2"
+                    src="https://amazoncomp.az/wp-content/uploads/2023/06/ASUS-ROG-Zephyrus-M16-GU603-2.jpg" alt="" />
+                </div>
+              </div>
+              <div class="col">
+                <div class="">
+                  <label for="validationCustom03" class="form-label">Ram, Gb</label>
+                  <input type="number" class="form-control ramInput" id="validationCustom03" required />
+                  <div class="invalid-feedback">
+                    Please provide a valid ram.
+                  </div>
+                </div>
+                <div class="">
+                  <label for="validationCustom03" class="form-label">CPU</label>
+                  <input type="text" class="form-control cpuInput" id="validationCustom03" required />
+                  <div class="invalid-feedback">
+                    Please provide a valid cpu.
+                  </div>
+                </div>
+                <div class="">
+                  <label for="validationCustom03" class="form-label">ROM</label>
+                  <input type="number" class="form-control romInput" id="validationCustom03" required />
+                  <div class="invalid-feedback">
+                    Please provide a valid rom.
+                  </div>
+                </div>
+
+                <div class="">
+                  <label for="validationDefault04" class="form-label">Rom type</label>
+                  <select class="form-select romTypeSelect" id="validationDefault04" required>
+                    <option selected disabled value="">Choose...</option>
+                    <option value="ssd">SSD</option>
+                    <option value="hdd">HDD</option>
+                  </select>
+                </div>
+
+                <div class="">
+                  <label for="validationCustom03" class="form-label">Operation System</label>
+                  <input type="text" class="form-control operationSystemInput" id="validationCustom03" required />
+                  <div class="invalid-feedback">
+                    Please provide a valid operation system.
+                  </div>
+                </div>
+                <div class="">
+                  <label for="validationCustom03" class="form-label">Video cart</label>
+                  <input type="text" class="form-control videoCartInput" id="validationCustom03" required />
+                  <div class="invalid-feedback">
+                    Please provide a valid operation video cart.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Save</button>
+              <input class="btn btn-warning" type="reset" />
+            </div>
+          </form>
+        </div>
+        <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
